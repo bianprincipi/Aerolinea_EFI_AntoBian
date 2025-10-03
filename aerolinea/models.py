@@ -183,9 +183,7 @@ class Boleto(models.Model):
     def __str__(self):
         return f"Boleto {self.codigo_barra}"
     
-    def save(self, *args, **kwargs):(venv) bian-principi@bian-principi-LOQ-15IAX9:~/Aerolinea_EFI_AntoBian$ mkdir aerolinea/services/reserva_service.py
-mkdir: no se puede crear el directorio «aerolinea/services/reserva_service.py»: No existe el archivo o el directorio
-
+    def save(self, *args, **kwargs):
         if not self.codigo_barra:
             self.codigo_barra = self._generar_codigo_barra()
         super().save(*args, **kwargs)
